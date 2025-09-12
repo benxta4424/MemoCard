@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function GetPokemonApi(props) {
+export default function FetchApi(props) {
     const [name, setName] = useState("")
 
     useEffect (() => {
@@ -9,7 +9,7 @@ export default function GetPokemonApi(props) {
 
    return(
     <>
-        <p>Hereeeee's <img src={name} alt="" /> </p>
+        <img src={name} alt="" />
     </>
    )
 }

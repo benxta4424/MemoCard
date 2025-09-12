@@ -40,3 +40,47 @@
 .read-the-docs {
   color: #888;
 }
+
+
+
+
+
+
+/* styiling pictures */
+.picturesBox {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+
+  max-height: 200px;
+  min-width: 700px;
+  max-width: 800px;
+}
+
+.actualPicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  margin: 8px 8px;
+  scale: 0.95;
+  transition-duration: 1.4s;
+  box-shadow: 1px 0px 8px 1px blue;
+
+  cursor: pointer;
+}
+
+.actualPicture:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
+  margin: 15px 15px;
+  box-shadow: 1px 0px 8px 1px red;
+
+  scale: 1.1;
+  transition-duration: 0.9s;
+  cursor: pointer;
+}
