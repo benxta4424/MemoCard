@@ -1,5 +1,6 @@
 import { useState } from "react";
 import FetchApi from "./Fetch";
+import Scoreboard from "./Scoreboard";
 
 export default function PreparePictures() {
     // we get the images first
@@ -14,10 +15,7 @@ export default function PreparePictures() {
     const [grabChoice, setGrabChoice] = useState(0)
     
 
-    const catchId = (desiredId) => {
-        setGrabChoice(desiredId)
-    }
-
+    
     const shuffle = () => {
         const new_arr = [...ids]
         for(let j = new_arr.length - 1; j > 0; j--) {
@@ -31,9 +29,28 @@ export default function PreparePictures() {
     } 
     
     
+    // updating ids logic
+    const [saveId, setSaveId] = useState([])
+    const [countIds, setCountIds] = useState(0)
+    
+    const catchId = (desiredId) => {
+        if(saveId.includes(desiredId)) {
+            setCountIds(0)
+            setSaveId([])
+        }
+        else {
+            setCountIds(prev => prev + 1)
+            setSaveId(prev => [...prev, desiredId])
+        }
+    }
+ 
 
     return (
         <>  
+            <div className="scoreboard">
+                <Scoreboard counter={countIds} />
+            </div>
+
             <div className="picturesBox">
                 {ids.map((id) => 
                     <div 
@@ -47,7 +64,6 @@ export default function PreparePictures() {
 
             </div>
 
-            <p>Current chosen: {grabChoice}</p>
         </>
     )
 
