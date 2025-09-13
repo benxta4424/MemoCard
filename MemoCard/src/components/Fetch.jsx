@@ -9,7 +9,7 @@ export default function FetchApi(props) {
 
    return(
     <>
-        <img src={name} alt="" />
+        <img key={props.id} src={name} alt="" />
     </>
    )
 }
