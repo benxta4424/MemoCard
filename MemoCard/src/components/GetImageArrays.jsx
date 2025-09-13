@@ -11,7 +11,13 @@ export default function PreparePictures() {
 
     // we use that array to create the current state
     const [ids, setIds] = useState(idArray)
+    const [grabChoice, setGrabChoice] = useState(0)
     
+
+    const catchId = (desiredId) => {
+        setGrabChoice(desiredId)
+    }
+
     const shuffle = () => {
         const new_arr = [...ids]
         for(let j = new_arr.length - 1; j > 0; j--) {
@@ -24,7 +30,7 @@ export default function PreparePictures() {
         setIds(new_arr)
     } 
     
-
+    
 
     return (
         <>  
@@ -33,12 +39,15 @@ export default function PreparePictures() {
                     <div 
                         className="actualPicture" 
                         key={id}
+                        onClickCapture={() => catchId(id)}
                         onClick={shuffle}
                         
                         > <FetchApi id={id} /> </div>
                 )}
 
             </div>
+
+            <p>Current chosen: {grabChoice}</p>
         </>
     )
 
