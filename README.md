@@ -28,13 +28,11 @@ I love games that are easy to start and tough to master. MemoCard is just that. 
 ## Win & Lose Scenarios
 
 **Win:**
-<video controls src="scenario_clips/win_scenario.mp4" title="Title"></video>
+<img src="./scenario_clips/win_picture.png" alt="picture of winning scenario">
 
 You made it! If you click all 12 cards without repeating, you get a little celebration. Enjoy the win. Brag if you want.
 
 **Lose:**
-<video controls src="scenario_clips/win_scenario.mp4" title="Title"></video>
-
 Click a card twice? The game resets. Maybe laugh, maybe groan, but you’ll want to try again.
 
 ---
